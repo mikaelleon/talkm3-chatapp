@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "pt101chatapp",
+    "chatapp": "pt101chatapp"
+  },
+  "targets": {},
+  "etags": {}
+}

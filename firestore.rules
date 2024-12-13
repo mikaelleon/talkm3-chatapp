@@ -1,0 +1,52 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // User document rules
+    match /users/{userId} {
+      // Allow the authenticated user to read and write their own user data
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      // Friend requests subcollection rules
+      match /friendRequests/{requestId} {
+        // Allow authenticated users to read their incoming friend requests
+        allow read: if request.auth != null && request.auth.uid == userId;
+
+        // Allow authenticated users to create a friend request to another user
+        allow create: if request.auth != null && request.auth.uid != requestId;
+
+        // Allow users to delete their friend requests
+        allow delete: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // Outgoing friend requests subcollection rules
+      match /friendRequestsSent/{requestId} {
+        // Allow authenticated users to read their outgoing friend requests
+        allow read: if request.auth != null && request.auth.uid == userId;
+
+        // Allow authenticated users to create outgoing friend requests
+        allow create: if request.auth != null && request.auth.uid == userId;
+
+        // Allow users to cancel their outgoing friend requests
+        allow delete: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // Contacts subcollection rules
+      match /contacts/{contactId} {
+        // Allow authenticated users to manage their contacts (read and write)
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Chat room rules (assuming user1 and user2 fields exist in chat room data)
+    match /chatRooms/{chatRoomId} {
+      // Allow read/write access if the authenticated user is one of the participants
+      allow read, write: if request.auth != null && (resource.data.user1 == request.auth.uid || resource.data.user2 == request.auth.uid);
+
+      // Messages subcollection rules
+      match /messages/{messageId} {
+        // Allow read/write access to messages if the authenticated user is one of the participants
+        allow read, write: if request.auth != null && (resource.parent.data.user1 == request.auth.uid || resource.parent.data.user2 == request.auth.uid);
+      }
+    }
+  }
+}
