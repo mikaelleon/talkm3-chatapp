@@ -9,7 +9,8 @@ import { getDatabase } from 'firebase/database'; // Import Realtime Database
 const firebaseConfig = {
   apiKey: 'AIzaSyC2VQI71tyH5Fy_9RfLnmEpLM5ZDl3pDtM',
   authDomain: 'pt101chatapp.firebaseapp.com',
-  databaseURL: 'https://pt101chatapp-default-rtdb.asia-southeast1.firebasedatabase.app',
+  databaseURL:
+    'https://pt101chatapp-default-rtdb.asia-southeast1.firebasedatabase.app',
   projectId: 'pt101chatapp',
   storageBucket: 'pt101chatapp.appspot.com',
   messagingSenderId: '682720758549',
