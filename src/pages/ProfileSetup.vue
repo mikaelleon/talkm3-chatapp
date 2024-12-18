@@ -8,7 +8,8 @@
             <div class="formbg-inner padding-horizontal--48">
               <!-- Title and Back Button -->
               <div class="flex-between padding-bottom--15 align-center">
-                <span><i class="fas fa-chevron-left" @click="goBack" style="cursor: pointer; margin-right: 10px;"></i>Complete Your Profile</span>
+                <span><i class="fas fa-chevron-left" @click="goBack" style="cursor: pointer; margin-right: 10px; "
+                  ></i>Complete Your Profile</span>
               </div>
 
               <!-- Profile Setup Form -->
@@ -263,6 +264,7 @@ export default {
 .fab {
   font-family: 'Font Awesome 6 Free'; /* For solid and regular icons */
   font-weight: 900; /* Ensure correct weight for FontAwesome solid icons */
+  color: #6cc26c; /* */
 }
 
 .fab {
@@ -284,7 +286,7 @@ h1 {
 }
 
 a {
-  color: #FF9000;
+  color: #6cc26c;
   text-decoration: unset;
 }
 
@@ -355,10 +357,10 @@ a {
   max-width: 448px;
   border-radius: 10px;
   background-color: var(--bg-color-light);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 15px #6cc26c; /* */
   backdrop-filter: blur(10px); /* Blur for the glass effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support for blur */
-  border: 1px solid rgba(255, 255, 255, 0.081); /* Semi-transparent background */
+  border: 1px solid #6cc26c; /* Semi-transparent background */ /* */
 }
 
 span {
@@ -403,7 +405,7 @@ span {
 
 .padding-bottom--15 {
   padding-bottom: 15px;
-  color: #FF9000;
+  color: #6cc26c; /* */
   font-weight: bold;
   text-transform: uppercase;
 }

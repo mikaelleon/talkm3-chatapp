@@ -6,7 +6,7 @@
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
               <!-- Profile Setup Header -->
-              <div class="flex-between padding-bottom--15">
+              <div class= "flex-between padding-bottom--15">
                 <span>Edit Profile</span>
 
                 <!-- Dark Mode Toggle Button -->
@@ -180,7 +180,7 @@ export default {
 
 .padding-bottom--15 {
   padding-bottom: 15px;
-  color: #FF9000;
+  color: #6cc26c;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -214,7 +214,7 @@ label {
 }
 
 .dark-mode .formbg {
-  background-color: #1a1f36;
+  background-color: #1a1f36; /*  */
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
