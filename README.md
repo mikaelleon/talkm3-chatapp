@@ -30,7 +30,9 @@ yarn format
 npm run format
 ```
 
-
+## To Clone the Repository 
+git clone https://github.com/mikaelleon/talkm3-chatapp.git
+cd <project-directory>
 
 ### Build the app for production
 ```bash
