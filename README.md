@@ -1,6 +1,6 @@
 # chatapp (talkm3-chatapp)
 
-talkm3 chatapp
+talkm3 chatapp is a special chatapp that is unique
 
 ## Install the dependencies
 ```bash
