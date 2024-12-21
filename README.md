@@ -31,9 +31,10 @@ npm run format
 ```
 
 ## To Clone the Repository 
+```bash
 git clone https://github.com/mikaelleon/talkm3-chatapp.git
 cd <project-directory>
-
+```
 ### Build the app for production
 ```bash
 quasar build
