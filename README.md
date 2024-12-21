@@ -1,6 +1,6 @@
-# chatapp (artub-chatapp)
+# chatapp (talkme-chatapp)
 
-artub chatapp
+talkm3 chatapp
 
 ## Install the dependencies
 ```bash
