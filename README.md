@@ -1,4 +1,4 @@
-# chatapp (talkme-chatapp)
+# chatapp (talkm3-chatapp)
 
 talkm3 chatapp
 
