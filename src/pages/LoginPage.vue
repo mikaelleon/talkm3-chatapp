@@ -216,7 +216,7 @@ h1 {
 }
 
 a {
-  color: #FF9000;
+  color: #6cc26c;/*forget password */
   text-decoration: unset;
 }
 
@@ -282,7 +282,7 @@ a {
 
 .padding-bottom--15 {
   padding-bottom: 15px;
-  color: #FF9000;
+  color: #6cc26c; /*  */
   font-weight: bold;
   text-transform: uppercase
 }
@@ -297,10 +297,10 @@ a {
   max-width: 448px;
   border-radius: 10px;
   background-color: var(--bg-color-light);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 15px #6cc26c;/* shadow effect*/ /*  */
   backdrop-filter: blur(10px); /* Blur for the glass effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support for blur */
-  border: 1px solid rgba(255, 255, 255, 0.081); /* Semi-transparent background */
+  border: 1px solid #6cc26c; /* Semi-transparent background */ /*  */
 }
 
 

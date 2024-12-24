@@ -1,6 +1,6 @@
-# chatapp (artub-chatapp)
+# chatapp (talkm3-chatapp)
 
-artub chatapp
+talkm3 chatapp is a special chatapp that is unique
 
 ## Install the dependencies
 ```bash
@@ -30,8 +30,11 @@ yarn format
 npm run format
 ```
 
-
-
+## To Clone the Repository 
+```bash
+git clone https://github.com/mikaelleon/talkm3-chatapp.git
+cd <project-directory>
+```
 ### Build the app for production
 ```bash
 quasar build

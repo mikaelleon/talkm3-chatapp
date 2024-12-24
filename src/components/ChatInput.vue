@@ -31,7 +31,7 @@
 
 <script>
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage } from '../boot/firebase';
+import { storage } from '@/boot/firebase';
 
 export default {
   props: {
@@ -65,32 +65,34 @@ export default {
 
       let fileUrl = null;
 
-      // Upload file if selected
-      if (this.selectedFile) {
-        fileUrl = await this.uploadFile(this.selectedFile);
-        if (!fileUrl) {
-          console.error('Failed to upload file.');
-          return;
+      try {
+        // Upload file if selected
+        if (this.selectedFile) {
+          fileUrl = await this.uploadFile(this.selectedFile);
+          if (!fileUrl) throw new Error('File upload failed.');
         }
+
+        // Construct message payload
+        const messageData = {
+          text: this.newMessage.trim() || null, // Include text only if it exists
+          fileUrl: fileUrl, // File URL if file was uploaded
+          senderId: this.currentUser.uid,
+          receiverId: this.activeContactId,
+          timestamp: new Date().toISOString(),
+        };
+
+        // Emit message to parent component
+        this.$emit('send-message', messageData);
+
+        // Reset input fields
+        this.newMessage = '';
+        this.selectedFile = null;
+        this.$refs.fileInput.value = ''; // Clear file input
+        this.resetTextarea();
+      } catch (error) {
+        console.error('Error sending message:', error);
+        alert('Failed to send message. Please try again.');
       }
-
-      // Construct message payload
-      const messageData = {
-        text: this.newMessage.trim() || null, // Include text only if it exists
-        fileUrl: fileUrl, // File URL if file was uploaded
-        senderId: this.currentUser.uid,
-        receiverId: this.activeContactId,
-        timestamp: new Date().toISOString(),
-      };
-
-      // Emit message to parent component
-      this.$emit('send-message', messageData);
-
-      // Reset input fields
-      this.newMessage = '';
-      this.selectedFile = null;
-      this.$refs.fileInput.value = ''; // Clear file input
-      this.resetTextarea();
     },
 
     // Upload file to Firebase Storage
@@ -108,10 +110,21 @@ export default {
       }
     },
 
-    // Handle file selection
+    // Handle file selection with validation
     handleFileInput(event) {
       const file = event.target.files[0];
+      const maxFileSize = 5 * 1024 * 1024; // 5MB
+
       if (file) {
+        if (!file.type.match('image.*') && !file.name.endsWith('.gif')) {
+          alert('Please upload a valid image or GIF file.');
+          return;
+        }
+        if (file.size > maxFileSize) {
+          alert('File size must be less than 5MB.');
+          return;
+        }
+
         this.selectedFile = file;
       }
     },
@@ -197,8 +210,24 @@ export default {
   font-weight: bold;
 }
 
+.message-form button:hover {
+  background-color: #ff9000;
+  color: white;
+}
+
 .message-form button:active {
   background-color: #c76b00;
   transform: scale(0.95);
+}
+
+.message-form button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.message-form button[type='button'] {
+  cursor: pointer;
+  background: none;
+  font-size: 1.5rem;
 }
 </style>

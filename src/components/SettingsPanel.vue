@@ -137,7 +137,7 @@ h2 {
 
 button {
   padding: 12px 18px;
-  background-color: #FF9000;
+  background-color: #005945; /*  */
   color: white;
   border: none;
   border-radius: 6px;
@@ -147,40 +147,40 @@ button {
 }
 
 button:hover {
-  background-color: #e07d00;
+  background-color: #6cc26c; /*  */
   transform: scale(1.02);
 }
 
 button:active {
-  background-color: #c76b00;
+  background-color: #6cc26c; /*  */
   transform: scale(0.98);
 }
 
 .delete-account-btn {
-  background-color: var(--bg-color-light);
-  border: solid 1px #FF9000;
-  color: #FF9000;
+  background-color: #005945; /*  */
+  border: solid 1px #005945; /*  */
+  color: #ffffff;
   margin-top: 15px;
 }
 
 .dark-mode .delete-account-btn {
-  background-color: var(--bg-color-light);
-  border: solid 1px #FF9000;
-  color: #FF9000;
+  background-color: #005945; /*  */
+  border: solid 1px #005945; /*  */
+  color: #ffffff;
   margin-top: 15px;
 }
 
 .delete-account-btn:hover {
-  background-color: #FF9000;
+  background-color: #6cc26c; /*  */
   color: #F5F5F5;
 }
 
 .dark-mode .delete-account-btn:hover {
-  background-color: #FF9000;
+  background-color: #6cc26c; /*  */
 }
 
 .delete-account-btn:active {
-  background-color: #FF9000;
+  background-color: #6cc26c; /*  */
 }
 
 /* Sliding effect styles */

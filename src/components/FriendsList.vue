@@ -299,7 +299,7 @@ export default {
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
-  color: #FF9000;
+  color: #005945; /*  */
   transition: background-color 0.2s, color 0.2s;
 }
 
@@ -311,8 +311,8 @@ export default {
   background-color: #141414; /* Dark mode hover effect */
 }
 
-.tabs button.active {
-  background-color: #FF9000;
+.tabs button.active { /*  */
+  background-color: #005945; /*  */
   color: white;
 }
 
@@ -348,7 +348,7 @@ export default {
 
 .friend-requests-list li:hover,
 .contact-list li:hover {
-  background-color: #FF9000; /* Highlight on hover */
+  background-color: #005945; /* Highlight on hover */
 }
 
 .request-info,
@@ -392,10 +392,10 @@ export default {
   transition: border-color 0.2s; /* Smooth border color transition */
 }
 
-.add-friend-section button {
+.add-friend-section button { 
   padding: 10px 15px;
   border-radius: 5px;
-  background-color: #FF9000;
+  background-color: #005945; /*  */
   color: white;
   border: none;
   cursor: pointer;
@@ -410,7 +410,7 @@ export default {
 
 .feedback.success {
   background-color: #d4edda;
-  color: #155724;
+  color: #FF9000; /*  */
 }
 
 .feedback.error {
@@ -419,7 +419,7 @@ export default {
 }
 
 .unfriend-btn {
-  background-color: #FF9000;
+  background-color: #ff3b5f;
   color: white;
   border: none;
   padding: 5px 10px;

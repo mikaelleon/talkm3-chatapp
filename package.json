@@ -15,7 +15,8 @@
   "dependencies": {
     "@quasar/cli": "^2.4.1",
     "@quasar/extras": "^1.16.12",
-    "firebase": "^10.14.0",
+    "firebase": "^10.14.1",
+    "firebase-cli": "^1.2.0",
     "quasar": "^2.17.0",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
